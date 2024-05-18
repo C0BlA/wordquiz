@@ -1,13 +1,9 @@
-#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//#include <dirent.h>
-#include<windows.h>
-#include<stdio.h>
+#include <windows.h>
+#include <tchar.h>
 #include <ctype.h>
-
-/* Hi */
 
 typedef 
 	enum {
@@ -19,22 +15,18 @@ typedef
 	}
 	command_t ;
 
-
-char *strndup(const char *s, size_t n)
-{
-    char *result;
-    size_t len = strlen(s);
-
-    if (n < len)
-        len = n;
-
-    result = (char *)malloc(len + 1);
-    if (!result)
-        return 0;
-
-    result[len] = '\0';
-    return (char *)memcpy(result, s, len);
+// strndup �Լ� ����
+char* strndup(const char* s, size_t n) {
+	char* result;
+	size_t len = strnlen(s, n);
+	result = (char*)malloc(len + 1);
+	if (result) {
+		memcpy(result, s, len);
+		result[len] = '\0';
+	}
+	return result;
 }
+
 char * read_a_line (FILE * fp)
 {
 	static char buf[BUFSIZ] ;
@@ -81,8 +73,6 @@ char * read_a_line (FILE * fp)
 	return s ;
 }
 
-
-
 void print_menu() {
 
 	printf("1. List all wordbooks\n") ;
@@ -98,22 +88,29 @@ int get_command() {
 	scanf("%d", &cmd) ;
 	return cmd ;
 }
+
 void list_wordbooks ()
 {
-    WIN32_FIND_DATA data;
-    HANDLE hFind;
+	WIN32_FIND_DATA findFileData;
+	HANDLE hFind = FindFirstFile("wordquiz\\wordbooks\\*", &findFileData);
 
-    printf("\n  ----\n") ;
+	if (hFind == INVALID_HANDLE_VALUE) {
+		printf("No wordbooks found.\n");
+		return;
+	}
 
-    if ((hFind = FindFirstFile(".\\wordbooks\\*", &data)) != INVALID_HANDLE_VALUE) {
-        do {
-            if (strcmp(data.cFileName, ".") != 0 && strcmp(data.cFileName, "..") !=0) {
-                printf("  %s\n", data.cFileName) ;
-            }
-        } while (FindNextFile(hFind, &data) != 0);
-        FindClose(hFind);
-    }
+	printf("\n  ----\n");
+	do {
+		const char* name = findFileData.cFileName;
+		if (strcmp(name, ".") != 0 && strcmp(name, "..") != 0) {
+			printf("  %s\n", name);
+		}
+	} while (FindNextFile(hFind, &findFileData) != 0);
+	FindClose(hFind);
+
+	printf("  ----\n");
 }
+
 void show_words ()
 {
 	char wordbook[128] ;
@@ -125,9 +122,14 @@ void show_words ()
 	printf(">") ;
 	scanf("%s", wordbook) ;
 
-	sprintf(filepath, "wordbooks/%s", wordbook) ;
+	sprintf(filepath, "wordquiz\\wordbooks\\%s", wordbook) ;
 
 	FILE * fp = fopen(filepath, "r") ;
+
+	if (!fp) {
+		printf("Failed to open wordbook %s\n", wordbook);
+		return;
+	}
 
 	printf("\n  -----\n") ;
 	char * line ;
@@ -145,7 +147,6 @@ void show_words ()
 	fclose(fp) ;
 }
 
-
 void run_test ()
 {
 	char wordbook[128] ;
@@ -155,9 +156,14 @@ void run_test ()
 	printf(">") ;
 	scanf("%s", wordbook) ;
 
-	sprintf(filepath, "wordbooks/%s", wordbook) ;
+	sprintf(filepath, "wordquiz\\wordbooks\\%s", wordbook) ;
 
 	FILE * fp = fopen(filepath, "r") ;
+
+	if (!fp) {
+		printf("Failed to open wordbook %s\n", wordbook);
+		return;
+	}
 
 	printf("\n-----\n") ;
 
@@ -195,10 +201,8 @@ void run_test ()
 	fclose(fp) ;
 }
 
-
 int main ()
 {
-	
 	printf(" *** Word Quiz *** \n\n") ;
 
 	int cmd ;
@@ -228,7 +232,6 @@ int main ()
 		}
 	}
 	while (cmd != C_EXIT) ;
-
 
 	return EXIT_SUCCESS ;
 }

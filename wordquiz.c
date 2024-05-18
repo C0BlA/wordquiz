@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <windows.h>
+//#include <direct.h>
 #include <tchar.h>
 #include <ctype.h>
 
@@ -15,7 +16,6 @@ typedef
 	}
 	command_t ;
 
-// strndup �Լ� ����
 char* strndup(const char* s, size_t n) {
 	char* result;
 	size_t len = strnlen(s, n);
@@ -86,6 +86,11 @@ int get_command() {
 
 	printf(">") ;
 	scanf("%d", &cmd) ;
+	if(cmd < C_ZERO || cmd > C_EXIT) {
+		printf("Invalid command\n") ;
+		scanf("%*c", &cmd) ;
+		return 0 ;
+	}
 	return cmd ;
 }
 

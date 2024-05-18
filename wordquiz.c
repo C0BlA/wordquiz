@@ -1,7 +1,10 @@
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <dirent.h>
+//#include <dirent.h>
+#include<windows.h>
+#include<stdio.h>
 #include <ctype.h>
 
 /* Hi */
@@ -17,6 +20,21 @@ typedef
 	command_t ;
 
 
+char *strndup(const char *s, size_t n)
+{
+    char *result;
+    size_t len = strlen(s);
+
+    if (n < len)
+        len = n;
+
+    result = (char *)malloc(len + 1);
+    if (!result)
+        return 0;
+
+    result[len] = '\0';
+    return (char *)memcpy(result, s, len);
+}
 char * read_a_line (FILE * fp)
 {
 	static char buf[BUFSIZ] ;
@@ -80,25 +98,22 @@ int get_command() {
 	scanf("%d", &cmd) ;
 	return cmd ;
 }
-
 void list_wordbooks ()
 {
+    WIN32_FIND_DATA data;
+    HANDLE hFind;
 
-	DIR * d = opendir("wordbooks") ;
-	
-	printf("\n  ----\n") ;
+    printf("\n  ----\n") ;
 
-	struct dirent * wb ;
-	while ((wb = readdir(d)) != NULL) {
-		if (strcmp(wb->d_name, ".") != 0 && strcmp(wb->d_name, "..") !=0) {
-			printf("  %s\n", wb->d_name) ;
-		}
-	}
-	closedir(d) ;
-
-	printf("  ----\n") ;
+    if ((hFind = FindFirstFile(".\\wordbooks\\*", &data)) != INVALID_HANDLE_VALUE) {
+        do {
+            if (strcmp(data.cFileName, ".") != 0 && strcmp(data.cFileName, "..") !=0) {
+                printf("  %s\n", data.cFileName) ;
+            }
+        } while (FindNextFile(hFind, &data) != 0);
+        FindClose(hFind);
+    }
 }
-
 void show_words ()
 {
 	char wordbook[128] ;

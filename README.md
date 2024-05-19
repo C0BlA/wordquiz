@@ -24,4 +24,6 @@ Reason for the Change: Explain why the change was necessary.
 Purpose of the Change: Describe the intended outcome or benefit of the modification.
 
 
-
+24/05/19 -SANGIN
+1. Draft readme
+2. Create a clear function to ensure screen visibility

@@ -6,12 +6,23 @@
 #include <tchar.h>
 #include <ctype.h>
 
+
+
+#ifdef _WIN32
+    #define CLEAR_COMMAND "cls"
+#else
+    #define CLEAR_COMMAND "clear"
+#endif
+
+
+
 typedef 
 	enum {
 		C_ZERO,
 		C_LIST,
 		C_SHOW,
 		C_TEST,
+		C_CLEAR,
 		C_EXIT,
 	}
 	command_t ;
@@ -73,12 +84,17 @@ char * read_a_line (FILE * fp)
 	return s ;
 }
 
+void clear_screen() {
+	system(CLEAR_COMMAND);
+}
+
 void print_menu() {
 
 	printf("1. List all wordbooks\n") ;
 	printf("2. Show the words in a wordbook\n") ;
 	printf("3. Test with a wordbook\n") ;
-	printf("4. Exit\n") ;
+	printf("4. Clear screen\n") ;
+	printf("5. Exit\n") ;
 }
 
 int get_command() {
@@ -212,6 +228,7 @@ int main ()
 
 	int cmd ;
 	do {
+		
 		print_menu() ;
 
 		cmd = get_command() ;
@@ -230,10 +247,14 @@ int main ()
 				run_test() ;
 				break ;
 			}
-
+			case C_CLEAR: {
+				clear_screen();
+				break;
+			}
 			case C_EXIT: {
 				return EXIT_SUCCESS ;
 			}
+			
 		}
 	}
 	while (cmd != C_EXIT) ;

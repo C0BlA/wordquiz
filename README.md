@@ -18,19 +18,13 @@ This project involves developing a simple English word quiz program in C languag
 
 
 
-Additional Features
+Additional Features:
 
 
 
 
 
-Function Modification
-When modifying or changing any functions in the program, please follow these guidelines:
-
-Document the Changes: Briefly write down the changes made to the function.
-Reason for the Change: Explain why the change was necessary.
-Purpose of the Change: Describe the intended outcome or benefit of the modification.
-
+Function Modification:
 
 24/05/19 -SANGIN
 1. Draft readme

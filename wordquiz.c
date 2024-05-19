@@ -128,7 +128,9 @@ void show_words ()
 	fclose(fp) ;
 }
 
-// Suppose i declared a function to add a new word
+// Suppose we created a function to add a new word
+
+// Suppose we created a wrong answer note function
 
 void run_test ()
 {

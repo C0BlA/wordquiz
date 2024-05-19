@@ -22,7 +22,6 @@ typedef
 		C_LIST,
 		C_SHOW,
 		C_TEST,
-		C_CLEAR,
 		C_EXIT,
 	}
 	command_t ;
@@ -93,8 +92,7 @@ void print_menu() {
 	printf("1. List all wordbooks\n") ;
 	printf("2. Show the words in a wordbook\n") ;
 	printf("3. Test with a wordbook\n") ;
-	printf("4. Clear screen\n") ;
-	printf("5. Exit\n") ;
+	printf("4. Exit\n") ;
 }
 
 int get_command() {
@@ -224,32 +222,43 @@ void run_test ()
 
 int main ()
 {
+	clear_screen() ;
 	printf(" *** Word Quiz *** \n\n") ;
 
 	int cmd ;
+	
 	do {
-		
 		print_menu() ;
 
 		cmd = get_command() ;
 		switch (cmd) {
 			case C_LIST : {
+				clear_screen();
 				list_wordbooks() ;
+				printf("Press any key to continue...\n") ;
+				_getch();
+				clear_screen();
 				break ;
 			}
 
 			case C_SHOW: {
+				clear_screen();
 				show_words() ;
+				printf("Press any key to continue...\n") ;
+				_getch();
+				clear_screen();
+				
 				break ;
 			}
 
 			case C_TEST: {
-				run_test() ;
-				break ;
-			}
-			case C_CLEAR: {
 				clear_screen();
-				break;
+				run_test() ;
+				printf("Press any key to continue...\n") ;
+				_getch();
+				clear_screen();
+				
+				break ;
 			}
 			case C_EXIT: {
 				return EXIT_SUCCESS ;

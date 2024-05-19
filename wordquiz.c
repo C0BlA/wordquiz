@@ -4,8 +4,6 @@
 #include <dirent.h>
 #include <ctype.h>
 
-/* Hi */
-
 typedef 
 	enum {
 		C_ZERO,
@@ -130,6 +128,7 @@ void show_words ()
 	fclose(fp) ;
 }
 
+// Suppose i declared a function to add a new word
 
 void run_test ()
 {

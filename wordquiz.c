@@ -131,6 +131,8 @@ void show_words ()
 // Suppose we created a function to add a new word
 
 // Suppose we created a wrong answer note function
+// Problem with that function
+// And assume that a bug has occurred in the part of dealing with exceptions, and that it has been resolved.
 
 void run_test ()
 {

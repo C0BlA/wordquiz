@@ -88,7 +88,8 @@ int get_command() {
 	scanf("%d", &cmd) ;
 	if(cmd < C_ZERO || cmd > C_EXIT) {
 		printf("Invalid command\n") ;
-		scanf("%*c", &cmd) ;
+		int temp;
+		while ((temp = getchar()) != '\n' && temp != EOF);
 		return 0 ;
 	}
 	return cmd ;

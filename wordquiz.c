@@ -111,7 +111,7 @@ int get_command() {
 void list_wordbooks ()
 {
 	WIN32_FIND_DATA findFileData;
-	HANDLE hFind = FindFirstFile("wordquiz\\wordbooks\\*", &findFileData);
+	HANDLE hFind = FindFirstFile("wordbooks\\*", &findFileData);
 
 	if (hFind == INVALID_HANDLE_VALUE) {
 		printf("No wordbooks found.\n");
@@ -141,7 +141,7 @@ void show_words ()
 	printf(">") ;
 	scanf("%s", wordbook) ;
 
-	sprintf(filepath, "wordquiz\\wordbooks\\%s", wordbook) ;
+	sprintf(filepath, "wordbooks\\%s", wordbook) ;
 
 	FILE * fp = fopen(filepath, "r") ;
 
@@ -175,7 +175,7 @@ void run_test ()
 	printf(">") ;
 	scanf("%s", wordbook) ;
 
-	sprintf(filepath, "wordquiz\\wordbooks\\%s", wordbook) ;
+	sprintf(filepath, "wordbooks\\%s", wordbook) ;
 
 	FILE * fp = fopen(filepath, "r") ;
 

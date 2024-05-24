@@ -29,3 +29,7 @@ Function Modification:
 24/05/19 -SANGIN
 1. Draft readme
 2. Create a clear function to ensure screen visibility
+
+
+24/05/24 -SANGIN
+1.bugfix: corrected incorrect path setting

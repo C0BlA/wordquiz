@@ -1,15 +1,19 @@
 # wordquiz
----
-##0Word Quiz
-###Team Project: English Word Quiz Program
-
-
 
 ---
+
+## Word Quiz
+### Team Project: English Word Quiz Program
+
+
+
+---
+
 ## Purpose of the Project
 
 
 ---
+
 This project is part of our English for Software Developer, designed to teach students how to use Git and GitHub for team projects. The primary goals of this project are:
 
 Learning Git and GitHub: Understanding the basics of version control using Git and collaboration on GitHub.

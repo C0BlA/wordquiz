@@ -29,7 +29,7 @@ This project involves developing a simple English word quiz program in C languag
 ## How to use
 
 ### 1. Download the code
-![image](https://github.com/C0BlA/wordquiz/assets/92429722/bef468d7-4247-43a3-adb6-924a2849d01c)<div align="left">
+![readme](https://github.com/C0BlA/wordquiz/assets/92429722/dbe7afec-3cf3-4848-a046-f1510bee8a5a)<div align="left">
 
 
 

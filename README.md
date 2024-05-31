@@ -26,37 +26,37 @@ This project involves developing a simple English word quiz program in C languag
 
 
 ---
-+ ## How to use
+## How to use
 
-++ ### 1. Download the code
-+++ ![readme](https://github.com/C0BlA/wordquiz/assets/92429722/82b9faf9-c207-43cb-adcf-7e93e8b2b8e2)<div align="left">
+### 1. Download the code
+![readme](https://github.com/C0BlA/wordquiz/assets/92429722/82b9faf9-c207-43cb-adcf-7e93e8b2b8e2)<div align="left">
 
 
-+++ ### 2. Create a txt file in wordbooks and add words.
+### 2. Create a txt file in wordbooks and add words.
 Type the words in the order of "words" "meaning".
 
 
-+++ ### 3. Study the words or take a test.
+### 3. Study the words or take a test.
 
 
 
 ---
-+ ## Collaborators
+## Collaborators
 
-++ ### Thank you for collabration
+### Thank you for collabration
 
-+++ [Jay](https://github.com/junseok-jay)
+[Jay](https://github.com/junseok-jay)
 
-+++ [kongkang123123](https://github.com/kongkang123123)
+[kongkang123123](https://github.com/kongkang123123)
 
 ---
-+ ## Function Modification:
+## Function Modification:
 
-++ 24/05/19 -SANGIN
-+++ 1. Draft readme
-+++ 2. Create a clear function to ensure screen visibility
+24/05/19 -SANGIN
+1. Draft readme
+2. Create a clear function to ensure screen visibility
 
 
-++ 24/05/24 -SANGIN
+24/05/24 -SANGIN
 
-+++ 1.bugfix: corrected incorrect path setting
+1.bugfix: corrected incorrect path setting

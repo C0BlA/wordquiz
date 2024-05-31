@@ -6,7 +6,7 @@
 
 
 ---
-##Purpose of the Project
+## Purpose of the Project
 
 
 ---
@@ -23,13 +23,13 @@ This project involves developing a simple English word quiz program in C languag
 
 
 ---
-##Additional Features:
+## Additional Features:
 
 
 
 
 ---
-##Function Modification:
+## Function Modification:
 
 24/05/19 -SANGIN
 1. Draft readme

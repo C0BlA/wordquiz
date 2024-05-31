@@ -13,9 +13,9 @@
 ## Purpose of the Project
 ---
 
-###This project is part of our English for Software Developer, designed to teach students how to use Git and GitHub for team projects. The primary goals of this project are:
+### This project is part of our English for Software Developer, designed to teach students how to use Git and GitHub for team projects. The primary goals of this project are:
 
-###Learning Git and GitHub: Understanding the basics of version control using Git and collaboration on GitHub.
+### Learning Git and GitHub: Understanding the basics of version control using Git and collaboration on GitHub.
 Simple Cooperation: Encouraging teamwork and collaboration among classmates.
 Studying English in a Team Project Context: Improving English language skills, particularly in the context of technical and project-based communication.
 Program Description

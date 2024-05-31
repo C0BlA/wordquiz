@@ -1,3 +1,5 @@
+---
+
 # wordquiz
 
 ---
@@ -8,15 +10,12 @@
 
 
 ---
-
 ## Purpose of the Project
-
-
 ---
 
-This project is part of our English for Software Developer, designed to teach students how to use Git and GitHub for team projects. The primary goals of this project are:
+###This project is part of our English for Software Developer, designed to teach students how to use Git and GitHub for team projects. The primary goals of this project are:
 
-Learning Git and GitHub: Understanding the basics of version control using Git and collaboration on GitHub.
+###Learning Git and GitHub: Understanding the basics of version control using Git and collaboration on GitHub.
 Simple Cooperation: Encouraging teamwork and collaboration among classmates.
 Studying English in a Team Project Context: Improving English language skills, particularly in the context of technical and project-based communication.
 Program Description
@@ -27,10 +26,28 @@ This project involves developing a simple English word quiz program in C languag
 
 
 ---
-## Additional Features:
+## How to use
+
+### 1. Download the code
+![image](https://github.com/C0BlA/wordquiz/assets/92429722/bef468d7-4247-43a3-adb6-924a2849d01c)<div align="left">
 
 
 
+
+### 2.
+
+
+
+
+
+---
+## Collaborators
+
+### Thank you for collabration
+
+[Jay]<https://github.com/junseok-jay> 
+
+[kongkang123123]<https://github.com/kongkang123123>
 
 ---
 ## Function Modification:
